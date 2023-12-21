@@ -5,6 +5,16 @@ terraform {
     }
   }
   required_version = ">=0.13"
+
+  backend "s3" {
+  endpoint = "storage.yandexcloud.net"
+  bucket   = "terraform-05"
+  region   = "ru-central1"
+  key      = "terraform.tfstate"
+
+  skip_region_validation      = true
+  skip_credentials_validation = true
+}
 }
 
 provider "yandex" {
@@ -56,4 +66,5 @@ data "template_file" "cloudinit" {
   ssh_authorized_keys = file(var.ssh_authorized_keys[0])
  }
 }
+
 
