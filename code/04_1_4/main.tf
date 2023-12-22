@@ -14,6 +14,9 @@ terraform {
 
   skip_region_validation      = true
   skip_credentials_validation = true
+
+    dynamodb_endpoint = "https://docapi.serverless.yandexcloud.net/ru-central1/b1g6mu0kpg153l24a7o9/etnu1q2d590vfcfc61e9"
+    dynamodb_table    = "terraform-05-lock"
 }
 }
 
